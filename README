@@ -1,0 +1,15 @@
+Written originally for aligning proteing sequences.  Don't have a makefile yet, just need a simple one to compile main.c.
+
+Run as: align sequences_filename substitution_matrix_filename gap_init_penalty gap_ext_penalty
+
+This is a modified form of the Needleman-Wunsch algorithm that uses affine gap scores which basically means instead of penalizing
+gaps the same way at each position, the penalty decreases as you add more gaps to an existing gap.  The analogy being if an
+organism mutated and removed a section from a protein, it's not linearly less likely for a larger section to be removed than a smaller one.
+
+TODO:
+Change to RNA, which basically means changing the substitution matrix file to be 4x4
+Make sure nothing is hardcoded in their looking for 20 amino acids (though I think I programmed it generally)
+Pull new RNA sequences to align
+Study the affine gap stuff so we're able to explain ourselves (I can probably do that)
+Implement a non-dynamic programming algorithm to do part 2 of the project
+(Optional) Do multi-sequence alignment, I've got a book from bioinformatics and you basically just make an n-dimensional matrix instead of 2
